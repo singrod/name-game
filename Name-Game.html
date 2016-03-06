@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-US">
+    <title>The Name Game</title>
+	<style>
+	#container {
+		height: 400px;
+		width: 400px;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	h1 {
+		color: #9F2828;
+		text-shadow: 4px 2px 8px black;
+	}
+	#button {
+		height: 40px;
+		width: 80px;
+		border-radius: 50%;
+		border: hidden;
+		background-color: #102EF5;
+		font-size: 14px;
+		font-weight: bold;
+		color: #fff;
+	}
+	#button:focus {
+    outline: 0;
+    }
+	#fullName {
+		color: green;
+		font-family: Georgia;
+		font-size: 18px;
+		font-style: italic;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+<hr/>
+<h1>Name Game</h1>
+<p>First Name:</p><input id="fname" type="text" >
+<p>Last Name:</p><input id="lname" type="text" > </br></br>
+<button id="button" onclick="changeName()">Submit</button><br/><br/>
+<div id="thankYou" style= "visibility: hidden">
+<a href="http://s267.photobucket.com/user/foryou2keep/media/Thanks_mcHT_Smiley-vi.gif.html" target="_blank"><img src="http://i267.photobucket.com/albums/ii290/foryou2keep/Thanks_mcHT_Smiley-vi.gif" border="0" alt="thanks smiley photo Thanks_mcHT_Smiley-vi.gif" /></a>
+</div>
+<p id="fullName"></p>
+<script>
+"use strict";
+function changeName(){
+	var first = document.getElementById("fname").value;
+	var last = document.getElementById("lname").value;
+	if(first != '' &&  last != ""){
+		document.getElementById("fullName").innerHTML = "Nice to meet you " +
+		first + " " + last;
+		var first = document.getElementById("fname").value = "";
+		var last = document.getElementById("lname").value = "";
+		document.getElementById("thankYou").style.visibility = "visible";
+	}
+	else  if(first != ""){
+		alert("Please enter your last name!");
+	}
+	else{
+		alert("please enter your first name!");
+	}
+} 
+</script>
+<address>Author: Mark Singleton 2-09-2016</address>
+<datalist>something</datalist>
+</div>
+</body>
+</html>
